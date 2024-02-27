@@ -1,2 +1,16 @@
 .idea
 .DS_Store
+
+node_modules/
+npm-debug.log
+package-lock.json
+typings
+
+src/*.js
+test/*.js
+*.js.map
+tsconfig.tsbuildinfo
+
+dist/
+coverage/
+.nyc_output/
