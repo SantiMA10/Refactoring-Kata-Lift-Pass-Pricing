@@ -5,6 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node_modules/.bin/ts-node .",
+    "predocker:run": "docker-compose -f docker-compose.yml build",
+    "docker:run": "docker-compose -f docker-compose.yml run --rm api",
+    "postdocker:run": "docker-compose -f docker-compose.yml down",
+    "docker:test": "yarn docker:run yarn test",
     "test": "node_modules/.bin/mocha --require ts-node/register --recursive test/**/*.spec.ts",
     "compile": "tsc"
   },

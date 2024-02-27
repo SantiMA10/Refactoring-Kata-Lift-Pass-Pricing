@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  api:
+    build:
+      context: .
+    command: yarn run watch
+    ports:
+      - '5010:5010'
+    volumes:
+      - .:/home/app/api
+      - /home/app/api/node_modules
+    depends_on:
+      mariadb:
+        condition: service_healthy
+
+  mariadb:
+    image: mariadb:10.4
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: 'mysql'
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d

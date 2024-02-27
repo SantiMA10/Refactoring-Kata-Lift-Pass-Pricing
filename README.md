@@ -15,8 +15,6 @@ This kata models a common problem - code that makes no sense to unit test due to
 
 You can find a [video pitch here](http://youtube.com/watch?v=-gSyD60WAvc)
 
-
-
 ## When am I done?
 
 There are a few steps, you could do any of them.
@@ -26,19 +24,14 @@ There are a few steps, you could do any of them.
 1. Pull down most of the high level tests
 1. Implement the new feature using unit tests and 1 or 2 high level tests.
 
-## Installation
+## How to run the tests
 
-Set up a MySQL database on localhost 3306 with user `root` and password `mysql`.
-If you have Docker installed the easiest thing is to use this script, that will initialize a [MariaDB](https://mariadb.org/).
+Requirements: 
+- docker (or OrbStack)
 
-    ./runLocalDatabase.sh
-
-Inject the data with
-
-    mysql -u root -p mysql < ./database/initDatabase.sql
-
-Then head on to the language of your choice and follow the Readme in there.
-Some of the languages have a failing test that you could finish writing.
+```bash
+yarn docker:test
+```
 
 ## Tips
 
