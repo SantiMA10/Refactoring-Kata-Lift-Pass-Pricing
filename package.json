@@ -5,11 +5,10 @@
   "main": "index.ts",
   "scripts": {
     "start": "node_modules/.bin/ts-node .",
-    "predocker:run": "docker-compose -f docker-compose.yml build",
     "docker:run": "docker-compose -f docker-compose.yml run --rm api",
     "postdocker:run": "docker-compose -f docker-compose.yml down",
-    "docker:test": "yarn docker:run yarn test",
-    "docker:test:watch": "yarn docker:run yarn test:watch",
+    "docker:test": "yarn docker:run yarn test --runInBand",
+    "docker:test:watch": "yarn docker:run yarn test:watch --runInBand",
     "test": "jest ./test",
     "test:watch": "yarn test --watch",
     "compile": "tsc",

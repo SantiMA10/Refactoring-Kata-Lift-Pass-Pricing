@@ -8,7 +8,7 @@ services:
     ports:
       - '5010:5010'
     volumes:
-      - .:/home/app/api
+      - .:/home/app/api:delegated
       - /home/app/api/node_modules
     depends_on:
       mariadb:
